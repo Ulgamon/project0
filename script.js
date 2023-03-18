@@ -1,9 +1,12 @@
-const classNames = {
-  TODO_ITEM: 'todo-container',
-  TODO_CHECKBOX: 'todo-checkbox',
-  TODO_TEXT: 'todo-text',
-  TODO_DELETE: 'todo-delete',
+class Todo {
+  constructor(text) {
+    this.checked = false
+    this.text = text
+    this.date = Date.now()
+  }
 }
+
+let todos = []
 
 const list = document.getElementById('todo-list')
 const itemCountSpan = document.getElementById('item-count')

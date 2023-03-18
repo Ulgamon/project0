@@ -3,16 +3,63 @@
   <head>
     <title>TODO App</title>
     <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <div class="container center">
-      <h1 class="center title">My TODO App</h1>
-      <div class="flow-right controls">
-        <span>Item count: <span id="item-count">0</span></span>
-        <span>Unchecked count: <span id="unchecked-count">0</span></span>
-      </div>
-      <button class="button center" onClick="newTodo()">New TODO</button>
-      <ul id="todo-list" class="todo-list"></ul>
+    <div class="container shadow-2xl bg-slate-50">
+      <h1 class="mx-auto my-3">TODO App</h1>
+      
+
+        <submit onSubmit="submitTodo()">
+          <input type="text" 
+          name="email" 
+          class="mt-1 px-4 py-3 mx-auto bg-white border-0 shadow-xl border-slate-300 
+          placeholder-slate-400 focus:outline-none 
+          block w-10/12 rounded-md" 
+          placeholder="TODO" />    
+          
+          <div class="flex flex-row justify-center content-center m-3">
+            <div class="basis-1/11 m-1">
+              <button class="bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring 
+              focus:ring-violet-300 px-5 py-3 text-sm leading-5 rounded-full font-semibold text-white shadow-lg" onClick="newTodo()">
+              New TODO
+              </button>
+            </div>
+            <div class="basis-1/11 m-1">
+              <p class="bg-blue-500 hover:bg-blue-600 
+               px-5 py-3 text-sm leading-5 rounded-full font-semibold text-white shadow-lg">
+              Item count: <span id="item-count">0</span>
+            </p>
+            </div>
+            <div class="basis-1/10 m-1">
+              <p class="bg-yellow-500 hover:bg-yellow-600 
+               px-5 py-3 text-sm leading-5 rounded-full font-semibold text-white shadow-lg">
+              Unchecked count: <span id="unchecked-count">0</span>
+            </p>
+            </div>
+    
+          </div>
+        </submit>
+
+      <h3 class="mx-auto">TODO LIST:</h3>
+      <ul id="todo-list" class="todo-list w-10/12 mx-auto block">
+        <div class="flex flex-row mt-1 px-4 py-3 w-full bg-white shadow-xl rounded-md">
+          <div class="basis-10/12">
+            Brush your teeth
+          </div>
+          <div class="basis-2/12">
+            <button 
+            class="hover:bg-slate-400 bg-slate-300 active:bg-slate-500 focus:bg-slate-500 rounded-full shadow-xl ml-auto">
+            <svg class="fill-red-700" 
+            xmlns="http://www.w3.org/2000/svg" 
+            height="48" 
+            width="48">
+              <path 
+              d="m12.45 37.65-2.1-2.1L21.9 24 10.35 12.45l2.1-2.1L24 21.9l11.55-11.55
+               2.1 2.1L26.1 24l11.55 11.55-2.1 2.1L24 26.1Z"/></svg></button>
+          </div>   
+        </div>
+      </ul>
     </div>
     <script src="./script.js"></script>
   </body>
